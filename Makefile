@@ -1,5 +1,6 @@
 CXX := g++
 CXXFLAGS := -std=c++20 -Wall -Wextra -Wpedantic -Werror
+MAKEFLAGS := --no-print-directory
 
 BUILD_DIR 	:= ./build
 SRC_DIR 	:= ./problemset
@@ -19,12 +20,15 @@ ARGS := $(shell echo $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS)) | xa
 $(eval $(FAKE_TARGET):;@:)
 
 build:
-	@echo "Arguments: $(ARGS)"
-	$(CXX) $(CXXFLAGS) $(SRC_DIR)/$(ARGS).cpp -o $(BUILD_DIR)/$(ARGS) 
+	@$(CXX) $(CXXFLAGS) $(SRC_DIR)/$(ARGS).cpp -o $(BUILD_DIR)/$(ARGS) 
 
 test:
-	@echo "Arguments: $(ARGS)"
 	@$(BUILD_DIR)/$(ARGS)
+
+run:
+	@echo "Arguments: $(ARGS)"
+	@make build $(ARGS)
+	@make test $(ARGS)
 
 clean:
 	@rm -rf $(BUILD_DIR) 
