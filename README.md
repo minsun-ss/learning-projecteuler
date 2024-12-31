@@ -1,0 +1,3 @@
+# Project Euler
+
+... something I look at after finishing advent of code every year...
