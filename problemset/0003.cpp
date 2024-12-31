@@ -1,6 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <cmath>
+#include "euler.hpp"
 
 using namespace std;
 
