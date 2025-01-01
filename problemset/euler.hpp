@@ -7,7 +7,12 @@
 
 namespace euler {
 
+// math related
 bool is_prime(long);
+
+// string related
+std::string read(std::string);
+std::string& sreplace(std::string&, std::string, std::string);
 
 /**
  * @brief pretty prints unordered maps
