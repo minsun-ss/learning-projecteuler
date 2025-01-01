@@ -2,7 +2,8 @@
 using namespace std;
 
 // Largest Palindrome Product
-// A palindromic number reads the same both ways. The largest product made from the product of two 2-digit numbers is 9009 = 91 * 99.
+// A palindromic number reads the same both ways. The largest product made from the
+// product of two 2-digit numbers is 9009 = 91 * 99.
 //
 // Find the largestt palindrome made from the product of two 3 digit numbers.
 
