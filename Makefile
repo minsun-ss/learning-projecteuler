@@ -20,7 +20,7 @@ ARGS := $(shell echo $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS)) | xa
 $(eval $(FAKE_TARGET):;@:)
 
 build:
-	@$(CXX) $(CXXFLAGS) $(SRC_DIR)/$(ARGS).cpp -o $(BUILD_DIR)/$(ARGS) 
+	@$(CXX) $(CXXFLAGS) $(SRC_DIR)/$(ARGS).cpp $(SRC_DIR)/euler.cpp -o $(BUILD_DIR)/$(ARGS) 
 
 test:
 	@$(BUILD_DIR)/$(ARGS)
