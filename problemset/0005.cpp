@@ -1,5 +1,6 @@
-#include "euler.hpp"
 #include <unordered_map>
+
+#include "euler.hpp"
 
 using namespace std;
 using namespace euler;
@@ -11,55 +12,54 @@ using namespace euler;
 // the numbers from 1 to 20?
 
 std::unordered_map<int, int> get_factors(int num) {
-    std::unordered_map<int, int> factors;
+  std::unordered_map<int, int> factors;
 
-    int n = num;
-    while (n != 1) {
-        if (n == 0) {
-            break;
-        }
-
-        if (euler::is_prime(n)) {
-            factors[n] += 1;
-            break;
-        }
-
-        for (int i=2; i <= int(pow(n, 0.5)); i++) {
-            if ((n % i == 0) && (euler::is_prime(i))) {
-                factors[i] += 1;
-                n /= i;
-                break;
-            }
-        }
+  int n = num;
+  while (n != 1) {
+    if (n == 0) {
+      break;
     }
-    return factors;
+
+    if (euler::is_prime(n)) {
+      factors[n] += 1;
+      break;
+    }
+
+    for (int i = 2; i <= int(pow(n, 0.5)); i++) {
+      if ((n % i == 0) && (euler::is_prime(i))) {
+        factors[i] += 1;
+        n /= i;
+        break;
+      }
+    }
+  }
+  return factors;
 }
 
 int least_common_multiple(std::vector<int> nums) {
-    int lcm = 1;
-    std::unordered_map<int,int> all_factors;
-    for (const auto& i: nums) {
-        auto mp = get_factors(i);
-        for (const auto& pair: mp) {
-            if (pair.second > all_factors[pair.first]) {
-                all_factors[pair.first] = pair.second;
-            }
-        }
+  int lcm = 1;
+  std::unordered_map<int, int> all_factors;
+  for (const auto& i : nums) {
+    auto mp = get_factors(i);
+    for (const auto& pair : mp) {
+      if (pair.second > all_factors[pair.first]) {
+        all_factors[pair.first] = pair.second;
+      }
     }
+  }
 
-    for (const auto& kv: all_factors) {
-        lcm  *= pow(kv.first, kv.second);
-    }
-    return lcm;
+  for (const auto& kv : all_factors) {
+    lcm *= pow(kv.first, kv.second);
+  }
+  return lcm;
 }
 
-
 int main() {
-    std::vector<int> nums;
-    for (int i=0; i <=20; i++) {
-        nums.push_back(i);
-    }
-    int output = least_common_multiple(nums);
-    cout << "Least common multiple from 1-20: " << output << "\n";
-    return 0;
+  std::vector<int> nums;
+  for (int i = 0; i <= 20; i++) {
+    nums.push_back(i);
+  }
+  int output = least_common_multiple(nums);
+  cout << "Least common multiple from 1-20: " << output << "\n";
+  return 0;
 }
