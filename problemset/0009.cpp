@@ -3,6 +3,11 @@
 using namespace std;
 using namespace euler;
 
+// A pythagorean triplet is a set of 3 natural numbers a < b < c, which
+// a^2 + b^2 = c^2
+//
+// There exists exactly one Pythaogrean triplet for which a + b + c = 1000.
+// Find product abc.
 int pythagorean_triplet_product(int sum) {
     // woah this is ugly
     // a - c = -b^2/sum-b
