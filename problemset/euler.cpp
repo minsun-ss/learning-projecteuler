@@ -37,4 +37,21 @@ std::string& sreplace(std::string& orig, std::string from, std::string to) {
     return orig;
 }
 
+std::vector<std::string> split(std::string& str, const std::string& delimiter) {
+    std::vector<std::string> tokens;
+    std::cout << str << " " << delimiter << "\n";
+    size_t beg = 0;
+    size_t end = str.find(delimiter);
+
+    while (end != std::string::npos) {
+        tokens.push_back(str.substr(beg, end - beg));
+        beg = end+1;
+        end = str.find(delimiter, beg);
+    }
+
+    // push in last token
+    tokens.push_back(str.substr(beg));
+    return tokens;
+}
+
 }  // namespace euler

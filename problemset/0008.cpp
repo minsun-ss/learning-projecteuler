@@ -50,7 +50,6 @@ long longest_product(int distance, string value) {
     return largest_product_value;
 }
 
-
 int main(int, char**) {
     string big_number = euler::read("problemset/0008.txt");
     euler::sreplace(big_number, "\n", "");

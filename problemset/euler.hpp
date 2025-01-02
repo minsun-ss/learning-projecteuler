@@ -12,6 +12,7 @@ bool is_prime(long);
 // string related
 std::string read(std::string);
 std::string& sreplace(std::string&, std::string, std::string);
+std::vector<std::string> split(std::string&, const std::string&);
 
 /**
  * @brief pretty prints unordered maps
@@ -26,6 +27,15 @@ void print(const std::unordered_map<K, V>& kv) {
     std::cout << i.first << ": " << i.second << " ";
   }
   std::cout << "}\n";
+}
+
+template<typename T>
+void print(const T& t) {
+    std:: cout << "[ ";
+    for (const auto& i : t) {
+        std:: cout << i << ", ";
+    }
+    std:: cout << " ]";
 }
 
 // todo - refactor later because think this timing is a bit bad but good enough
