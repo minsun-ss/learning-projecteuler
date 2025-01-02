@@ -39,7 +39,6 @@ std::string& sreplace(std::string& orig, std::string from, std::string to) {
 
 std::vector<std::string> split(std::string& str, const std::string& delimiter) {
     std::vector<std::string> tokens;
-    std::cout << str << " " << delimiter << "\n";
     size_t beg = 0;
     size_t end = str.find(delimiter);
 

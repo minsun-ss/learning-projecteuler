@@ -29,6 +29,11 @@ void print(const std::unordered_map<K, V>& kv) {
   std::cout << "}\n";
 }
 
+/**
+* @brief pretty prints those container that don't contain a pair
+* @tparam T container value
+* @param T container
+*/
 template<typename T>
 void print(const T& t) {
     std:: cout << "[ ";
