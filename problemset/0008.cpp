@@ -29,12 +29,25 @@ using namespace euler;
 // Find the thirteen adjacent digits in the 1000 digit number that have the greatest product.
 // What is the value of this product?
 
-long longest_product(int distance, long value) {
-    string svalue = to_string(value);
-    for (size_t i=0; i < svalue.size()-distance; i++) {
-    cout << i << " " << svalue.size() << svalue.substr(i,distance) << "\n";
+long product(string& value, int start, int distance) {
+    long vproduct = 1;
+    for (int i = start; i < start+distance; i++ ) {
+        vproduct *= stoi(string(1, value[i]));
     }
-    return 0;
+    return vproduct;
+}
+
+long longest_product(int distance, string value) {
+    long largest_product_value = 1;
+
+    for (size_t i = 0; i < value.size()-distance; i++) {
+        long current_product_value = product(value, i, distance);
+        if (current_product_value > largest_product_value) {
+            largest_product_value = current_product_value;
+        }
+    }
+
+    return largest_product_value;
 }
 
 
@@ -42,7 +55,7 @@ int main(int, char**) {
     string big_number = euler::read("problemset/0008.txt");
     euler::sreplace(big_number, "\n", "");
 
-
-    cout << big_number << "\n";
+    long lp = longest_product(13, big_number);
+    cout << "Largest product substring: "<< lp << "\n";
     return 0;
 }

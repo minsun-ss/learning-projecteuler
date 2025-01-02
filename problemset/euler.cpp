@@ -2,6 +2,7 @@
 #include <fstream>
 #include <sstream>
 #include <stdexcept>
+#include <string>
 
 
 namespace euler {
@@ -15,8 +16,6 @@ bool is_prime(long num) {
 }
 
 std::string read(std::string filename) {
-    //    std::cout << std::filesystem::current_path() << "\n";
-
     std::ifstream file(filename);
 
     if (!file) {
