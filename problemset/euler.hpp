@@ -48,12 +48,13 @@ void print(const T& t) {
 // todo - refactor later because think this timing is a bit bad but good enough
 // for a proxy for now
 template <typename F, typename... Args>
-long long int ntime(F func, Args&&... args) {
+auto ntime(F func, Args&&... args) {
   auto start = std::chrono::high_resolution_clock::now();
-  func(std::forward<Args>(args)...);
+  auto result = std::forward<F>(func)(std::forward<Args>(args)...);
   auto end = std::chrono::high_resolution_clock::now();
-  return std::chrono::duration_cast<std::chrono::nanoseconds>(end - start)
+  auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start)
       .count();
+  return std::make_pair(result, duration);
 }
 
 }  // namespace euler

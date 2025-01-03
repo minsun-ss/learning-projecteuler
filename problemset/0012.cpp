@@ -34,6 +34,8 @@ long divisors_500() {
 }
 
 int main(int, char**) {
+    auto [result, duration] = euler::ntime(divisors_500);
     cout << "Over 500 divisors: " << divisors_500() << "\n";
+    cout << "Time to function: " << duration << "ns\n";
     return 0;
 }

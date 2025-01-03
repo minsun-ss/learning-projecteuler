@@ -59,8 +59,10 @@ long largest_product_in_grid(std::vector<std::vector<int>>& grid) {
 int main(int, char**) {
     auto gtext = euler::read("problemset/0011.txt");
     auto g = make_grid(gtext);
-    auto p = largest_product_in_grid(g);
 
-    cout << "Largest 4 digit product in grid: " <<  p << "\n";
+
+    auto [result, duration] = euler::ntime(largest_product_in_grid, g);
+    cout << "Largest 4 digit product in grid: " <<  result << "\n";
+    cout << "Time to function: " << duration << "ns\n";
     return 0;
 }

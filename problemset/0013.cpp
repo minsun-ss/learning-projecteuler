@@ -33,6 +33,8 @@ int main(int, char**) {
     snums = euler::strip(snums);
     auto nums = euler::split(snums, "\n");
 
-    cout << "First ten digits: " << really_big_sum(nums) << "\n";
+    auto [result, duration] = euler::ntime(really_big_sum, nums);
+    cout << "First ten digits: " << result << "\n";
+    cout << "Time to function: " << duration << "ns\n";
     return 0;
 }
