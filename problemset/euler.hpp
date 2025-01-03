@@ -3,6 +3,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <vector>
+#include <ranges>
 
 namespace euler {
 
@@ -12,6 +13,7 @@ bool is_prime(long);
 // string related
 std::string read(std::string);
 std::string& sreplace(std::string&, std::string, std::string);
+std::string strip(const std::string&);
 std::vector<std::string> split(std::string&, const std::string&);
 
 /**
@@ -40,7 +42,7 @@ void print(const T& t) {
     for (const auto& i : t) {
         std:: cout << i << ", ";
     }
-    std:: cout << " ]";
+    std:: cout << "]\n";
 }
 
 // todo - refactor later because think this timing is a bit bad but good enough

@@ -3,6 +3,7 @@
 #include <sstream>
 #include <stdexcept>
 #include <string>
+#include <ranges>
 
 
 namespace euler {
@@ -35,6 +36,13 @@ std::string& sreplace(std::string& orig, std::string from, std::string to) {
         orig.replace(pos, 1, to);
     }
     return orig;
+}
+
+std::string strip(const std::string& str) {
+    std::string s = str;
+    s.erase(0, s.find_first_not_of(" \t\n\r\f\v"));
+    s.erase(s.find_last_not_of(" \t\n\r\f\v") + 1);
+    return s;
 }
 
 std::vector<std::string> split(std::string& str, const std::string& delimiter) {
