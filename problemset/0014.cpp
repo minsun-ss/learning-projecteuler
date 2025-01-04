@@ -81,7 +81,6 @@ void build_tree(long counter) {
     imap[1].value()->print();
 }
 
-
 int main(int, char**) {
     build_tree(1000000);
     return 0;
