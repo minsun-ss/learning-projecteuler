@@ -3,7 +3,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <vector>
-#include <ranges>
+#include <optional>
 
 namespace euler {
 
