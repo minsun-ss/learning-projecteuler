@@ -32,7 +32,7 @@ std::string read(std::string filename) {
 std::string& sreplace(std::string& orig, std::string from, std::string to) {
     size_t pos = 0;
     while ((pos = orig.find(from)) != std::string::npos) {
-        orig.replace(pos, 1, to);
+        orig.replace(pos, from.size(), to);
     }
     return orig;
 }

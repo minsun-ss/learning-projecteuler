@@ -53,8 +53,9 @@ auto ntime(F func, Args&&... args) {
   auto start = std::chrono::high_resolution_clock::now();
   auto result = std::forward<F>(func)(std::forward<Args>(args)...);
   auto end = std::chrono::high_resolution_clock::now();
-  auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start)
-      .count();
+  auto duration = (end-start);
+  // auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start)
+      // .count();
   return std::make_pair(result, duration);
 }
 
