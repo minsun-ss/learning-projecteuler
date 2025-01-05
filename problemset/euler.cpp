@@ -6,6 +6,7 @@
 
 
 namespace euler {
+// math related
 bool is_prime(long num) {
   for (int i = 2; i <= int(pow(num, 0.5)); i++) {
     if (num % i == 0) {
@@ -15,6 +16,7 @@ bool is_prime(long num) {
   return true;
 }
 
+// string related
 std::string read(std::string filename) {
     std::ifstream file(filename);
 

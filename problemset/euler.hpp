@@ -7,6 +7,7 @@
 #include <set>
 #include <map>
 #include <concepts>
+#include <locale>
 
 namespace euler {
 
