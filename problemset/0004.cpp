@@ -35,6 +35,9 @@ int highest_palindrome(int digits) {
 }
 
 int main() {
-  cout << "Highest palindrome is " << highest_palindrome(3) << "\n";
-  return 0;
+    auto [result, duration] = euler::ntime(highest_palindrome, 3);
+    cout << "Highest palindrome is " << result << "\n";
+    cout.imbue(locale(""));
+    cout << "Duration (ns): " << duration << "\n";
+    return 0;
 }

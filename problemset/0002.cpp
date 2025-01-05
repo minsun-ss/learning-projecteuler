@@ -1,6 +1,7 @@
 #include "euler.hpp"
 
 using namespace std;
+using namespace euler;
 
 // By considering the terms in the Fibonacci sequence whose values do not
 // exceed 4mm, find sum of the event valued terms
@@ -32,6 +33,9 @@ long fibonacci(long max) {
 }
 
 int main() {
-  cout << fibonacci(4000000) << "\n";
+    auto [result, duration] = euler::ntime(fibonacci, 4000000);
+    cout << "Fibonacci: " << result << "\n";
+    cout.imbue(locale(""));
+    cout << "Duration (ns): " << duration << "\n";
   return 0;
 }
