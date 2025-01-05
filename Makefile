@@ -26,10 +26,14 @@ test:
 	@$(BUILD_DIR)/$(ARGS)
 
 run:
-	@echo "Arguments: $(ARGS) $(ARGS2)"
+	@echo "Arguments: $(ARGS)"
 	@make build $(ARGS)
 	@make test $(ARGS)
 
 clean:
 	@rm -rf $(BUILD_DIR)
 	@echo "Removed $(BUILD_DIR)"
+
+docker:
+	docker build --rm -t euler .
+	docker run euler /bin/sh -c "make run $(ARGS)"
