@@ -1,6 +1,7 @@
 CXX := g++
 CXXFLAGS := -std=c++20 -Wall -Wextra -Wpedantic -Werror
 MAKEFLAGS := --no-print-directory
+VERSION := $(shell cat VERSION | head -1)
 
 BUILD_DIR 	:= ./build
 SRC_DIR 	:= ./problemset
@@ -37,3 +38,10 @@ clean:
 docker:
 	docker build --rm -t euler .
 	docker run euler /bin/sh -c "make run $(ARGS)"
+
+tag:
+	git tag v$(VERSION)
+	git push --tags
+
+changelog:
+	git cliff --unreleased --tag $(VERSION) --prepend changelog.md
