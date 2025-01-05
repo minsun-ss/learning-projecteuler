@@ -1,3 +1,4 @@
+#include <cstdint>
 #include <unordered_map>
 
 #include "euler.hpp"
@@ -59,7 +60,10 @@ int main() {
   for (int i = 0; i <= 20; i++) {
     nums.push_back(i);
   }
-  int output = least_common_multiple(nums);
-  cout << "Least common multiple from 1-20: " << output << "\n";
+
+  auto [result, duration] = euler::ntime(least_common_multiple, nums);
+  cout << "Least common multiple from 1-20: " << result << "\n";
+  cout.imbue(locale(""));
+  cout << "Duration (ns): " << duration << "\n";
   return 0;
 }
