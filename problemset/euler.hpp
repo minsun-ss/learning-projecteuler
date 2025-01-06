@@ -13,6 +13,7 @@ namespace euler {
 
 // math related
 bool is_prime(long);
+std::vector<long> proper_divisors(long);
 
 // string related
 std::string read(std::string);

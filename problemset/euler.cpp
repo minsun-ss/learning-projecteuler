@@ -16,6 +16,23 @@ bool is_prime(long num) {
   return true;
 }
 
+std::vector<long> proper_divisors(long n) {
+    std::vector<long> divisors;
+    divisors.push_back(1);
+
+    for (long i=2; i <= pow(n, 0.5); i++) {
+        if (n%i==0) {
+            if (i != n/i) {
+                // insert appears to be a lot faster than 2 pushbacks
+                divisors.insert(divisors.end(), {i, n/i});
+            } else {
+                divisors.push_back(i);
+            }
+        }
+    }
+    return divisors;
+}
+
 // string related
 std::string read(std::string filename) {
     std::ifstream file(filename);
