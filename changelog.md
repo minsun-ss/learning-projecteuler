@@ -2,6 +2,17 @@
 
 Project Euler project changelog.
 
+## [1.23.0] - 2025-01-06
+
+### Bug Fixes
+
+- Added times to 2 & 4
+- Added times to problem 5
+
+### Features
+
+- Finished 23 but pretty slow
+
 ## [1.22.0] - 2025-01-05
 
 ### Bug Fixes
