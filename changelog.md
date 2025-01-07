@@ -2,6 +2,12 @@
 
 Project Euler project changelog.
 
+## [1.24.0] - 2025-01-07
+
+### Features
+
+- Solved problem 24
+
 ## [1.23.0] - 2025-01-06
 
 ### Bug Fixes
