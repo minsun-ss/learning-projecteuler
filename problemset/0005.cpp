@@ -1,6 +1,3 @@
-#include <cstdint>
-#include <unordered_map>
-
 #include "euler.hpp"
 
 using namespace std;

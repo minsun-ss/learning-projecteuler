@@ -20,8 +20,8 @@ int squares_diff(int n) {
 }
 
 int main() {
-  int rtime = euler::ntime(squares_diff, 100);
-  cout << "Diff for numbers 1-100: " << squares_diff(100) << "\n";
-  cout << "Time to run: " << rtime << "ns\n";
-  return 0;
+    auto [result, duration] =  euler::ntime(squares_diff, 100);
+    cout << "Diff for numbers 1-100: " << result << "\n";
+    cout << "Duration(ns): " << duration << "ns\n";
+    return 0;
 }

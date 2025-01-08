@@ -1,5 +1,6 @@
 #include "euler.hpp"
 using namespace std;
+using namespace euler;
 
 // Largest Palindrome Product
 // A palindromic number reads the same both ways. The largest product made from
