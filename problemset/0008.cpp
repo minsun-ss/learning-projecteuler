@@ -54,7 +54,8 @@ int main(int, char**) {
     string big_number = euler::read("problemset/0008.txt");
     euler::sreplace(big_number, "\n", "");
 
-    long lp = longest_product(13, big_number);
-    cout << "Largest product substring: "<< lp << "\n";
+    auto [result, duration] = euler::ntime(longest_product, 13, big_number);
+    cout << "Largest product substring: "<< result << "\n";
+    cout << "Duration (ns): " << duration << "\n";
     return 0;
 }

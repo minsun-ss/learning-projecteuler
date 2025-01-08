@@ -25,9 +25,8 @@ long find_prime(long n) {
 }
 
 int main() {
-  long val = find_prime(10001);
-  long timer = euler::ntime(find_prime, 10001);
-  cout << "Last available prime is: " << val << "\n";
-  cout << "Time: " << timer << "ns\n";
+    auto [result, duration] = euler::ntime(find_prime, 10001);
+  cout << "Last available prime is: " << result << "\n";
+  cout << "Duration (ns): " << duration << "\n";
   return 0;
 }
