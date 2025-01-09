@@ -17,15 +17,12 @@ Project Euler project changelog.
 
 ### Features
 
-- Solved problem 24
-- Finished problem 25
 - Finished problem 26
 
 ## [1.25.0] - 2025-01-08
 
 ### Features
 
-- Solved problem 24
 - Finished problem 25
 
 ## [1.24.0] - 2025-01-07
