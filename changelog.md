@@ -2,6 +2,17 @@
 
 Project Euler project changelog.
 
+## [1.27.0] - 2025-01-09
+
+### Bug Fixes
+
+- Updated 4, 5, 6 for timings
+- Updated 7, 8
+
+### Features
+
+- Finished problem 27 and redid a faulty assumption about primes
+
 ## [1.26.0] - 2025-01-08
 
 ### Features
