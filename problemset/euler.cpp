@@ -8,12 +8,15 @@
 namespace euler {
 // math related
 bool is_prime(long num) {
-  for (int i = 2; i <= int(pow(num, 0.5)); i++) {
-    if (num % i == 0) {
-      return false;
+    if (num < 2) {
+        return false;
     }
-  }
-  return true;
+    for (int i = 2; i <= int(pow(num, 0.5)); i++) {
+        if (num % i == 0) {
+        return false;
+        }
+    }
+    return true;
 }
 
 std::vector<long> proper_divisors(long n) {
