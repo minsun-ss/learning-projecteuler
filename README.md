@@ -24,6 +24,7 @@ inside a docker container.
 make docker <puzzle number>
 ```
 
+As per guidelines on Project Euler, problems above 100 are not public, and encrypted with git-crypt.
 
 # Some lessons learned
 
