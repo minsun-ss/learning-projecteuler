@@ -2,6 +2,12 @@
 
 Project Euler project changelog.
 
+## [1.30.0] - 2025-01-12
+
+### Features
+
+- Solved 30
+
 
 ## [1.29.0] - 2025-01-12
 
