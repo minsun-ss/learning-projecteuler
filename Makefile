@@ -1,5 +1,6 @@
 CXX := g++
-CXXFLAGS := -std=c++20 -Wall -Wextra -Wpedantic -Werror
+CXXFLAGS := -std=c++20 -Wall -Wextra -Werror
+MOREFLAGS := -lgmpxx -lgmp
 MAKEFLAGS := --no-print-directory
 VERSION := $(shell cat VERSION | head -1)
 
@@ -21,7 +22,8 @@ ARGS := $(shell printf %04g $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS
 $(eval $(FAKE_TARGET):;@:)
 
 build:
-	@$(CXX) $(CXXFLAGS) $(SRC_DIR)/$(ARGS).cpp $(SRC_DIR)/euler.cpp -o $(BUILD_DIR)/$(ARGS)
+	@$(CXX) $(CXXFLAGS) $(SRC_DIR)/$(ARGS).cpp $(SRC_DIR)/euler.cpp $(MOREFLAGS) -o $(BUILD_DIR)/$(ARGS)
+
 
 test:
 	@$(BUILD_DIR)/$(ARGS)
