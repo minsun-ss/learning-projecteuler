@@ -2,6 +2,17 @@
 
 Project Euler project changelog.
 
+
+## [1.29.0] - 2025-01-12
+
+### Bug Fixes
+
+- Pe encrypt
+
+### Features
+
+- Setting up git crypt for 100+
+
 ## [1.28.0] - 2025-01-10
 
 ### Features
